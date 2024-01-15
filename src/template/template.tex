@@ -1,0 +1,181 @@
+% use german language
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, ngerman]{babel}
+\usepackage{lmodern}
+
+% format
+\usepackage{geometry}
+\geometry{top=1.2cm, left=0.4cm, right=0.4cm}
+\textheight = 550pt
+
+% author
+\usepackage{authblk}
+
+% tables / tabular
+\usepackage{tabularx}
+\usepackage{makecell}
+
+% math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+% graphic
+\usepackage{graphicx}
+
+% multi column
+\usepackage{multicol}
+
+%compact items
+\setlist{topsep=0pt, leftmargin=4mm, nolistsep}
+\setlength{\parindent}{0cm}
+
+% header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% header
+\fancyhead[RO]{\AUTHOR | \INSTITUTE}
+\fancyhead[LO]{\TITLE}
+
+% footer
+\fancyfoot[RO]{\CREATED}
+
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\headsep = 2pt
+\footskip = 0pt
+
+% define Section format
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+
+\titleformat{name=\section}[block]{\sffamily\normalsize}{}{0pt}{\colorsection}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\newcommand{\colorsection}[1]{%
+	\colorbox{sectioncolor!80}{\parbox{0.98\linewidth}{\vspace{-1pt}\color{white}\ #1 \vspace{-2pt}}}}
+
+% define Subsection format
+\titleformat{name=\subsection}[block]{\sffamily\small}{}{0pt}{\colorsubsection}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\newcommand{\colorsubsection}[1]{%
+	\colorbox{subsectioncolor!80}{\parbox{0.98\linewidth}{\vspace{-1pt}\color{white}\ #1 \vspace{-2pt}}}}
+
+% define SubSubsection format
+\titleformat{name=\subsubsection}[block]{\sffamily\small}{}{0pt}{\colorsubsubsection}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+\newcommand{\colorsubsubsection}[1]{%
+	\colorbox{subsubsectioncolor!60}{\parbox{0.98\linewidth}{\vspace{-1pt}\color{white}\ #1 \vspace{-2pt}}}}
+
+
+% define colors
+\definecolor{sectioncolor}{HTML}{191919}
+\definecolor{subsectioncolor}{HTML}{8c195f}
+\definecolor{subsubsectioncolor}{HTML}{d72864}
+
+\definecolor{b}{RGB}{0, 115, 192 } %Default highlight color
+\definecolor{p}{RGB}{0, 43, 54} %Dark page color
+\definecolor{t}{RGB}{131, 148, 150} %Dark text color
+
+\definecolor{darkgreen}{RGB}{0,150,0}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{DarkPurple}{rgb}{0.4, 0.1, 0.4}
+\definecolor{DarkCyan}{rgb}{0.0, 0.5, 0.4}
+\definecolor{LightLime}{rgb}{0.3, 0.5, 0.4}
+\definecolor{Blue}{rgb}{0.0, 0.0, 1.0}
+\definecolor{h}{RGB}{1, 101, 163}
+
+% code listings
+\usepackage{listings}
+\usepackage{color}
+\usepackage{beramono}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+
+\definecolor{lstborder}{RGB}{149, 73, 119}
+\definecolor{lstbackground}{RGB}{242, 232, 239}
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstdefinestyle{eclipse-style}{
+	frame=single,
+	rulecolor=\color{lstborder},
+	backgroundcolor=\color{lstbackground},
+	language=C,
+	showstringspaces=false,
+	basicstyle=\ttfamily\scriptsize,
+	keywordstyle=\color{RoyalBlue}\ttfamily,
+    stringstyle=\color{darkgreen}\ttfamily,
+	commentstyle=\color{DarkPurple!60}\ttfamily,
+	identifierstyle=\color{black}\ttfamily,
+	escapeinside={£}{£}, % latex scope within code
+	breaklines=true,
+	breakatwhitespace=true,
+	showspaces=false,
+	showtabs=false,
+	tabsize=2,
+	morekeywords={length},
+	numberstyle=\tiny\color{black},
+	aboveskip = 0em,
+	belowskip = 0em,
+	xleftmargin= 0em,
+	framexleftmargin= 0em,
+	gobble=20
+}
+\lstset{
+	style=eclipse-style
+	% literate=  % Allow for German characters in lstlistings.
+	% {Ö}{{\"O}}1
+	% {Ä}{{\"A}}1
+	% {Ü}{{\"U}}1
+	% {ü}{{\"u}}1
+	% {ä}{{\"a}}1
+	% {ö}{{\"o}}1}
+}
+
+% creation date
+\usepackage{filemod}
+\newcommand{\CREATED}{\filemodprintdate{\jobname}}
+
+% front page
+\newcommand{\AUTHOR}{Nico Fehr }
+\newcommand{\INSTITUTE}{Ostschweizer Fachhochschule}
+
+% no indentation
+\setlength{\parindent}{0cm}
+
+% new item tabitem for bullet points in tables
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
